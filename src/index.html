@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="root" ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Referrals prototype</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="us-gov">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p>An official website of the United States Government</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="container" role="banner">
+      <div class="row">
+        <div class="col-sm-12 clearfix">
+          <!-- logo -->
+          <a class="pull-left logo" aria-labelledby="headerLinkLabel">
+            <img src="images/irs_horiz_white.svg" alt="IRS logo, tap to return to IRS dot gov">
+          </a>
+          <div id="logoutDiv" class="nav-link pull-right" deep-blur="hideDropDown()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <root>
+      <span class="loader">Loading...</span>
+    </root>
+  </div>
+
+  <script src="js/vendor.js"></script>
+  <script src="js/bundle.js"></script>
+</body>
+</html>

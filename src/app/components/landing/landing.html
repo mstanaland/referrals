@@ -1,0 +1,44 @@
+<div class="ref-header">
+  <h1 class="serif">Report Tax Fraud &amp; Abuse</h1>
+  <p class="">
+    The IRS wants to know about scams, schemes and cons as well as people and organizations who aren’t complying with tax laws. You can help report fraud using the form below. Looking for fraud-related paper forms? <a href="#">View the form index</a>
+  </p>
+</div>
+
+<div class="ref-content">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>What type of fraud are you reporting?</h3>
+      <hr>
+      <form name="landingForm" novalidate>
+        <fieldset class="ref-fieldset-inputs">
+          <ul class="ref-unstyled-list">
+            <li>
+              <input id="nc" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="nc">
+              <label for="nc">You suspect someone is not paying taxes or complying with tax laws</label>
+            </li>
+            <li>
+              <input id="victim" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="victim">
+              <label for="victim">You are a victim of fraud or identity theft</label>
+            </li>
+            <li>
+              <input id="comms" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="comms">
+              <label for="comms">Phone scam, email phishing, or fake IRS website</label>
+            </li>
+          </ul>
+        </fieldset>
+        <hr>
+        <div class="ref-btn-area">
+          <button class="btn btn-secondary pull-left">Back</button>
+          <button
+            class="btn btn-primary pull-right"
+            ng-class="{ 'btn-disabled' : landingForm.$invalid }"
+            type="submit"
+            ng-disabled="landingForm.$invalid">
+              Continue
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
