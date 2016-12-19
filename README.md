@@ -1,29 +1,22 @@
 # Referrals prototype
 
-----
-
-## Setup and install
-
-#### Requirements
 
 These are required, but skip this step if you already have them installed
 
 1. [Node.js](https://nodejs.org/en/download/)
-2. Install Gulp CLI on the command-line with `npm install -g gulp`
+2. Gulp CLI on the command-line with `npm install -g gulp`
 
 
 #### Project installation
 
-You'll need to `cd` into the repo directory and run `npm install`:
+Navigate to the repo directory and run `npm install`:
 
 ```
-cd <Referrals-app-folder>
+cd <referrals>
 npm install
 ```
 
-This will then setup all the development and production dependencies we need.
-
-Now simply run this to boot up the server:
+To compile and start the server:
 
 ```
 npm start
