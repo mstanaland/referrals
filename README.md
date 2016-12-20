@@ -22,4 +22,4 @@ To compile and start the server:
 npm start
 ```
 
-Work inside of `/src`, and everything is compiled and outputted inside `/dist`.
+Everything you do will be inside of `/src`, and everything is compiled and outputted inside `/dist`.
