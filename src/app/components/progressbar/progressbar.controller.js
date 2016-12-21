@@ -1,5 +1,5 @@
 function ProgressBarController() {
-  console.log('ncPrescreenController controller reporting in');
+  // console.log('ProgressBarController reporting in');
 }
 
 angular
