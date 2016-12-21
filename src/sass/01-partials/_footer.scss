@@ -1,0 +1,53 @@
+.footer {
+  background: $footer;
+  font-size: 1em;
+
+  .pull-left {
+      line-height: 3.125em;
+
+       img {
+        width: 60px;
+        height: 23px;
+    }
+  }
+
+  ul {
+    line-height: 3.125em;
+
+    li {
+      display: inline-block;
+      line-height: 1;
+      color: $white;
+
+      a {
+        color: $white;
+        padding: 10px 5px;
+
+        &:hover, &:focus, &:visited, &:active {
+          text-decoration: none;
+          background: transparent;
+        }
+
+        @media (min-width: 768px) {
+          padding: 10px 15px;
+        }
+      }
+
+      svg,
+      .icon {
+        width: 0.938em;
+        height: 0.938em;
+        fill: $white;
+        stroke: $white;
+        margin-left: .25em;
+        position: relative;
+        top: 3px;
+
+        //- firefox svg fill issue
+        use > svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

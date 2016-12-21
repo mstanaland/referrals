@@ -1,11 +1,16 @@
 .ref-header
   @include clearfix
-  margin-bottom: 50px
-  border-bottom: solid 1px $mid-dark-gray
-  // padding-bottom: 20px
+  margin-bottom: 20px
+  // background: white
+  padding: 20px 0
+  // border-bottom: solid 1px $mid-dark-gray
+
+  @media screen and (max-width: $screen-sm)
+    margin-bottom: 0
 
   h1
     font-weight: bold
+    margin-top: 0.25em
     margin-bottom: 0.5em
     font-family: 'Merriweather'
 
@@ -17,4 +22,4 @@
   h1
     font-size: 15px
     line-height: 1
-    margin: 20px 0
+    // margin: 20px 0
