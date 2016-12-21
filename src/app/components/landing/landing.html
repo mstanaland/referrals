@@ -10,26 +10,26 @@
     <div class="col-md-8 col-md-offset-2">
       <h3>What type of fraud are you reporting?</h3>
       <hr>
-      <form name="landingForm" novalidate>
+      <form name="landingForm" novalidate ng-submit="$ctrl.onSubmit();">
         <fieldset class="ref-fieldset-inputs">
           <ul class="ref-unstyled-list">
             <li>
-              <input id="nc" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="nc">
+              <input id="nc" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="nc">
               <label for="nc">You suspect someone is not paying taxes or complying with tax laws</label>
             </li>
             <li>
-              <input id="victim" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="victim">
+              <input id="victim" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="victim">
               <label for="victim">You are a victim of fraud or identity theft</label>
             </li>
             <li>
-              <input id="comms" type="radio" name="radios" ng-required="!radio" ng-model="radio" value="comms">
+              <input id="comms" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="comms">
               <label for="comms">Phone scam, email phishing, or fake IRS website</label>
             </li>
           </ul>
         </fieldset>
         <hr>
         <div class="ref-btn-area">
-          <button class="btn btn-secondary pull-left">Back</button>
+          <!-- <button class="btn btn-secondary pull-left">Back</button> -->
           <button
             class="btn btn-primary pull-right"
             ng-class="{ 'btn-disabled' : landingForm.$invalid }"
