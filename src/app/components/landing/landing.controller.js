@@ -12,7 +12,7 @@ function LandingController($state) {
         $state.go('comms');
         break;
     }
-  }
+  };
 }
 
 angular
