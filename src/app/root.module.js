@@ -3,5 +3,6 @@ angular
     'common',
     'templates',
     'landing',
+    'progressBar',
     'nc'
   ]);
