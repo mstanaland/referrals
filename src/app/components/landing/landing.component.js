@@ -13,4 +13,4 @@ angular
         component: 'landing'
       });
     $urlRouterProvider.otherwise('/');
-  })
+  });
