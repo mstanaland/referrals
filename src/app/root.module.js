@@ -1,6 +1,7 @@
 angular
   .module('root', [
     'common',
+    'templates',
     'landing',
-    'templates'
+    'nc'
   ]);
