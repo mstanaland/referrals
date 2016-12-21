@@ -2,8 +2,7 @@ function LandingController($state) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'nc':
-        // $state.go('nc');
-        console.log('Non-compliance');
+        $state.go('nc');
         break;
       case 'victim':
         $state.go('victim');
