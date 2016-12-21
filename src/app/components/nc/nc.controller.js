@@ -1,5 +1,5 @@
 function ncController($state) {
-  console.log('NC controller reporting in');
+  // console.log('NC controller reporting in');
 }
 
 angular
