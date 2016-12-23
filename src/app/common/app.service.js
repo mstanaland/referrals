@@ -1,5 +1,9 @@
 function store () {
- this.progress = 0;
+  this.values = {
+    nc: {},
+    victim: {},
+    comms: {}
+  };
 
   this.setProgressBar = function(value) {
     var width = document.querySelectorAll('.ref-progressbar')[0].clientWidth;
@@ -9,5 +13,5 @@ function store () {
 }
 
 angular
- .module('common')
- .service('store', store);
+  .module('common')
+  .service('store', store);
