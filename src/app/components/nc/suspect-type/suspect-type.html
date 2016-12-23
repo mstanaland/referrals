@@ -1,0 +1,89 @@
+<h3>Who do you suspect is not paying taxes or complying with tax laws ?</h3>
+
+<hr>
+
+<form name="suspectTypeForm" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <ul class="ref-unstyled-list">
+      <li>
+        <input
+          type="radio"
+          id="individual"
+          value="individual"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="individual">
+          Individual
+          <irs-popover
+            header="Individual"
+            content="Report a single individual or small business owner violating tax laws on their personal return.">
+            What's this?
+          </irs-popover>
+        </label>
+      </li>
+      <li>
+        <input
+          type="radio"
+          id="business"
+          value="business"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="business">
+          Business
+          <irs-popover
+            header="Business"
+            content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi iusto cum cumque, officiis, libero a.">
+            What's this?
+          </irs-popover>
+        </label>
+      </li>
+      <li>
+        <input
+          type="radio"
+          id="exempt"
+          value="exempt"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="exempt">
+          Tax-exempt organization, charity, or employee plan
+          <irs-popover
+            header="Tax-exempt organizations"
+            content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed minus velit sapiente vel reprehenderit excepturi placeat ipsa, tempora modi harum.">
+            What's this?
+          </irs-popover>
+        </label>
+      </li>
+      <li>
+        <input
+          type="radio"
+          id="gov"
+          value="gov"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="gov">
+          State or local government
+          <irs-popover
+            header="Government"
+            content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quaerat beatae atque sed, modi.">
+            What's this?
+          </irs-popover>
+        </label>
+      </li>
+    </ul>
+  </fieldset>
+  <hr>
+  <div class="ref-btn-area">
+    <button ng-click="$ctrl.back();" class="btn btn-secondary pull-left">Back</button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : suspectTypeForm.$invalid }"
+      type="submit"
+      ng-disabled="suspectTypeForm.$invalid">
+        Continue
+      </button>
+  </div>
+</form>
