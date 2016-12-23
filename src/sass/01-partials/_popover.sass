@@ -1,0 +1,52 @@
+.popover
+  box-shadow: none
+  border-radius: 0
+  padding: 0
+  border: 0
+  background: $primary-blue
+  color: $white
+  width: calc(100% - 50px)
+  max-width: none
+  font-size: 1em
+
+  @media(min-width: $screen-sm-min)
+    width: 416px
+
+  &.bottom
+    > .arrow
+      border-bottom-color: $primary-blue
+      &:after
+        border-bottom-color: $primary-blue
+
+
+
+  .popover-title
+    background-color: $primary-blue
+    border-bottom: 0
+    border-radius: 0
+    padding: 15px 20px 0
+    font-size: 1em
+    line-height: 1.375em
+    font-weight: 700
+    position: relative
+    font-family: 'Source Sans Pro'
+
+  .popover-content
+    padding: 10px 20px 20px
+    line-height: 1.5em
+    font-family: 'Source Sans Pro'
+
+  svg,
+  .js-close-pop
+    background: $primary-blue
+    width: 1.375em
+    height: 1.375em
+    cursor: pointer
+    position: absolute
+    top: 15px
+    right: 15px
+    fill: $white
+
+    //- firefox svg fill issue
+    use > svg
+      fill: $white
