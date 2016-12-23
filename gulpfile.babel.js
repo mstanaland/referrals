@@ -31,7 +31,10 @@ const paths = {
   modules: [
     'angular/angular.js',
     'angular-ui-router/release/angular-ui-router.js',
-    'angular-loading-bar/build/loading-bar.min.js'
+    'angular-ui-bootstrap/dist/ui-bootstrap.js',
+    'angular-aria/angular-aria.js',
+    'jquery/dist/jquery.js',
+    'bootstrap-sass/assets/javascripts/bootstrap.js'
   ],
   maps: [
     'angular-ui-router/release/angular-ui-router.js.map',
