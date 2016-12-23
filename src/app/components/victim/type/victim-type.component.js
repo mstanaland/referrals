@@ -4,7 +4,7 @@ var victimType = {
 };
 
 angular
-  .module('victim')
+  .module('common')
   .component('victimType', victimType)
   .config(function($stateProvider) {
     $stateProvider

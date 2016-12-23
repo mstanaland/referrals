@@ -14,5 +14,5 @@ function IdtheftController($state) {
 }
 
 angular
-  .module('victim')
+  .module('common')
   .controller('IdtheftController', IdtheftController);

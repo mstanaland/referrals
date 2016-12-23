@@ -1,4 +1,6 @@
-function VictimTypeController($state) {
+function VictimTypeController($state, commonService) {
+  commonService.setProgressBar(0.05);
+
   this.back = function() {
     $state.go('landing');
   };
@@ -14,5 +16,5 @@ function VictimTypeController($state) {
 }
 
 angular
-  .module('victim')
+  .module('common')
   .controller('VictimTypeController', VictimTypeController);

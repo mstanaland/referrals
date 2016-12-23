@@ -4,7 +4,7 @@ var idtheft = {
 };
 
 angular
-  .module('victim')
+  .module('common')
   .component('idtheft', idtheft)
   .config(function($stateProvider) {
     $stateProvider
