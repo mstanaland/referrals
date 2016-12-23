@@ -17,6 +17,7 @@ import child from 'child_process';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
 import plumber from 'gulp-plumber';
+import beep from 'beepbeep';
 
 const exec = child.exec;
 const argv = yargs.argv;

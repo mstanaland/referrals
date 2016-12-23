@@ -6,7 +6,8 @@
 
 .ref-progressbar-bar
   float: left
-  width: 10%
+  width: 0
   height: 12px
   background: $color-green-light
-  border-right: solid 1px rgba(black, 0.2)
+  // border-right: solid 1px rgba(black, 0.2)
+  @include transition(width 350ms $ease-in-out-quad)

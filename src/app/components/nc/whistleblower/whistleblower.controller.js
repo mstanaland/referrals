@@ -1,4 +1,6 @@
-function WhistleblowerController($state) {
+function WhistleblowerController($state, commonService) {
+  commonService.setProgressBar(0.2);
+
   this.back = function() {
     $state.go('nc.prescreen');
   };
@@ -8,11 +10,11 @@ function WhistleblowerController($state) {
       case 'taxprep':
         $state.go('taxprep');
         break;
-      
+
     }
   };
 }
 
 angular
-  .module('nc')
+  .module('common')
   .controller('WhistleblowerController', WhistleblowerController);

@@ -4,7 +4,7 @@ var nc = {
 };
 
 angular
-  .module('nc')
+  .module('common')
   .component('nc', nc)
   .config(function($stateProvider) {
     $stateProvider

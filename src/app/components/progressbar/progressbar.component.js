@@ -1,8 +1,7 @@
-var progressBar = {
-  templateUrl: './progressbar.html',
-  controller: 'ProgressBarController'
+var progressbar = {
+  templateUrl: './progressbar.html'
 };
 
 angular
-  .module('progressBar')
-  .component('progressBar', progressBar);
+  .module('common')
+  .component('progressbar', progressbar);

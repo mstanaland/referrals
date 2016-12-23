@@ -3,5 +3,5 @@ function ncController($state) {
 }
 
 angular
-  .module('nc')
+  .module('common')
   .controller('ncController', ncController);

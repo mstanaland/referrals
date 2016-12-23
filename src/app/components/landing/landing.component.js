@@ -4,7 +4,7 @@ var landing = {
 };
 
 angular
-  .module('landing')
+  .module('common')
   .component('landing', landing)
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

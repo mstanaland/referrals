@@ -4,7 +4,7 @@ var prescreen = {
 };
 
 angular
-  .module('nc')
+  .module('common')
   .component('prescreen', prescreen)
   .config(function($stateProvider) {
     $stateProvider

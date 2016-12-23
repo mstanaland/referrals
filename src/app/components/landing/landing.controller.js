@@ -2,7 +2,7 @@ function LandingController($state) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'nc':
-        $state.go('nc');
+        $state.go('nc.prescreen');
         break;
       case 'victim':
         $state.go('victim');
@@ -15,5 +15,5 @@ function LandingController($state) {
 }
 
 angular
-  .module('landing')
+  .module('common')
   .controller('LandingController', LandingController);

@@ -1,4 +1,6 @@
-function ncPrescreenController($state) {
+function ncPrescreenController($state, commonService) {
+  commonService.setProgressBar(0.05);
+
   this.back = function() {
     $state.go('landing');
   };
@@ -22,5 +24,5 @@ function ncPrescreenController($state) {
 }
 
 angular
-  .module('nc')
+  .module('common')
   .controller('ncPrescreenController', ncPrescreenController);

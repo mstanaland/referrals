@@ -9,7 +9,10 @@
     "deploy": "gulp production --deploy"
   },
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstanaland/referrals"
+  },
   "dependencies": {
     "angular": "^1.5.8",
     "angular-loading-bar": "^0.9.0",
@@ -21,6 +24,7 @@
     "babel-core": "^6.20.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.18.0",
+    "beepbeep": "^1.2.0",
     "browser-sync": "^2.14.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",

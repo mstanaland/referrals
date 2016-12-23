@@ -4,7 +4,7 @@ var whistleblower = {
 };
 
 angular
-  .module('nc')
+  .module('common')
   .component('whistleblower', whistleblower)
   .config(function($stateProvider) {
     $stateProvider
