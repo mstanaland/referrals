@@ -22,15 +22,33 @@
           <fieldset class="ref-fieldset-inputs">
             <ul class="ref-unstyled-list">
               <li>
-                <input id="nc" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="nc">
+                <input
+                  type="radio"
+                  id="nc"
+                  value="nc"
+                  name="radios"
+                  ng-required="!radio"
+                  ng-model="$ctrl.radio">
                 <label for="nc">You suspect someone is not paying taxes or complying with tax laws</label>
               </li>
               <li>
-                <input id="victim" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="victim">
+                <input
+                  type="radio"
+                  id="victim"
+                  value="victim"
+                  name="radios"
+                  ng-required="!radio"
+                  ng-model="$ctrl.radio">
                 <label for="victim">You are a victim of fraud or identity theft</label>
               </li>
               <li>
-                <input id="comms" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="comms">
+                <input
+                  type="radio"
+                  id="comms"
+                  value="comms"
+                  name="radios"
+                  ng-required="!radio"
+                  ng-model="$ctrl.radio">
                 <label for="comms">Phone scam, email phishing, or fake IRS website</label>
               </li>
             </ul>
