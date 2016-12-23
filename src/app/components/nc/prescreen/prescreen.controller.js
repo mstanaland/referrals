@@ -1,5 +1,5 @@
-function ncPrescreenController($state, commonService) {
-  commonService.setProgressBar(0.05);
+function ncPrescreenController($state, store) {
+  store.setProgressBar(0.05);
 
   this.back = function() {
     $state.go('landing');

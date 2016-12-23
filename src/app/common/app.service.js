@@ -1,4 +1,4 @@
-function commonService () {
+function store () {
  this.progress = 0;
 
   this.setProgressBar = function(value) {
@@ -10,4 +10,4 @@ function commonService () {
 
 angular
  .module('common')
- .service('commonService', commonService);
+ .service('store', store);

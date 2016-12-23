@@ -1,5 +1,5 @@
-function VictimTypeController($state, commonService) {
-  commonService.setProgressBar(0.05);
+function VictimTypeController($state, store) {
+  store.setProgressBar(0.05);
 
   this.back = function() {
     $state.go('landing');

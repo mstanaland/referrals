@@ -1,5 +1,5 @@
-function WhistleblowerController($state, commonService) {
-  commonService.setProgressBar(0.1);
+function WhistleblowerController($state, store) {
+  store.setProgressBar(0.1);
 
   this.back = function() {
     $state.go('nc.prescreen');
