@@ -6,11 +6,23 @@
   <fieldset class="ref-fieldset-inputs">
     <ul class="ref-unstyled-list">
       <li>
-        <input id="no" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="no">
+        <input
+          type="radio"
+          id="no"
+          value="no"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
         <label for="no">No / My violation doesn't qualify</label>
       </li>
       <li>
-        <input id="yes" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="yes">
+        <input
+          type="radio"
+          id="yes"
+          value="yes"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
         <label for="yes">Yes, take me to the whistleblower information page</label>
       </li>
     </ul>
