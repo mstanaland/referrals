@@ -13,10 +13,21 @@ function SuspectTypeController($state, store) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'individual':
-        store.values.nc.suspectType = 'individual'
+        store.values.nc.suspectType = 'individual';
+        $state.go('nc.indContact');
+        break;
+      case 'business':
+        store.values.nc.suspectType = 'business';
         $state.go('XX');
         break;
-
+      case 'exempt':
+        store.values.nc.suspectType = 'exempt';
+        $state.go('XX');
+        break;
+      case 'gov':
+        store.values.nc.suspectType = 'gov';
+        $state.go('XX');
+        break;
     }
   };
 }

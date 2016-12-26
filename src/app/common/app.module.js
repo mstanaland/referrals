@@ -1,6 +1,6 @@
 angular
   .module('common', [
     'ui.router',
-    'ui.bootstrap',
+    // 'ui.bootstrap',
     'ngAria'
   ]);

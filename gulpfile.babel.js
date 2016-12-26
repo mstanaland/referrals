@@ -31,7 +31,7 @@ const paths = {
   modules: [
     'angular/angular.js',
     'angular-ui-router/release/angular-ui-router.js',
-    'angular-ui-bootstrap/dist/ui-bootstrap.js',
+    // 'angular-ui-bootstrap/dist/ui-bootstrap.js',
     'angular-aria/angular-aria.js',
     'jquery/dist/jquery.js',
     'bootstrap-sass/assets/javascripts/bootstrap.js'
