@@ -34,6 +34,7 @@ function IndBusinessController($state, store) {
     store.values.bizEmail = this.bizEmail;
     store.values.bizUrl = this.bizUrl;
     console.log(store.values);
+    $state.go('nc.indViolationType');
   };
 }
 
