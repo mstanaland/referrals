@@ -1,5 +1,5 @@
 <h3>Who are you reporting?</h3>
-
+<p>Basic contact information is required because we can't act on your report without it</p>
 <hr>
 
 <form name="contactForm" novalidate ng-submit="$ctrl.onSubmit();">
@@ -158,7 +158,8 @@
         <label for="maritalStatus">Marital status</label>
         <select
           name="maritalStatus"
-          id="maritalStatus">
+          id="maritalStatus"
+          ng-model="$ctrl.maritalStatus">
           <option value="single">Single</option>
           <option value="married">Married</option>
         </select>
@@ -181,7 +182,8 @@
         <label for="relationship">How do you know this person?</label>
         <select
           name="relationship"
-          id="relationship">
+          id="relationship"
+          ng-model="$ctrl.relationship">
           <option value="friend">Friend</option>
           <option value="relative">Relative</option>
           <option value="coworker">Coworker</option>
@@ -201,7 +203,6 @@
               id="dangerYes"
               value="dangerYes"
               name="radios"
-              ng-required="!radio"
               ng-model="$ctrl.radio">
             <label for="dangerYes">
               Yes
@@ -212,7 +213,6 @@
               id="dangerNo"
               value="dangerNo"
               name="radios"
-              ng-required="!radio"
               ng-model="$ctrl.radio">
             <label for="dangerNo">
               No / Don't know
@@ -224,13 +224,18 @@
   <hr>
 
   <div class="ref-btn-area">
-    <button ng-click="$ctrl.back();" class="btn btn-secondary pull-left">Back</button>
+    <button
+      class="btn btn-secondary pull-left"
+      type="button"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
     <button
       class="btn btn-primary pull-right"
       ng-class="{ 'btn-disabled' : contactForm.$invalid }"
       type="submit"
       ng-disabled="contactForm.$invalid">
-        Continue
-      </button>
+      Continue
+    </button>
   </div>
 </form>

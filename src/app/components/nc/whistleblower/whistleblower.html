@@ -29,7 +29,12 @@
   </fieldset>
   <hr>
   <div class="ref-btn-area">
-    <button ng-click="$ctrl.back();" class="btn btn-secondary pull-left">Back</button>
+    <button
+      type="button"
+      class="btn btn-secondary pull-left"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
     <button
       class="btn btn-primary pull-right"
       ng-class="{ 'btn-disabled' : whistleblowerForm.$invalid }"
