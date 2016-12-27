@@ -1,0 +1,171 @@
+<h3>Does this individual own a small business that’s involved in the fraud?</h3>
+
+<hr>
+
+<form name="contactForm" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <ul class="ref-unstyled-list">
+      <li>
+        <input id="no" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="no">
+        <label for="no">No / Not sure</label>
+      </li>
+      <li>
+        <input id="yes" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="yes">
+        <label for="yes">Yes</label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <fieldset class="ref-fieldset-inputs margin-below" ng-if="$ctrl.radio==='yes'">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="bizName">
+          Business name
+          <em class="ref-form-required ">Required</em></label>
+        <input
+          type="text"
+          id="bizName"
+          name="bizName"
+          required="required"
+          ng-model="$ctrl.bizName">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="bizStreetAddress">
+          Street address
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="bizStreetAddress"
+          name="bizStreetAddress"
+          required="required"
+          ng-model="$ctrl.bizStreetAddress">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label for="bizStreetAddressUnit">
+          Suite/Unit/Other
+        </label>
+        <input
+          type="text"
+          id="bizStreetAddressUnit"
+          name="bizStreetAddressUnit"
+          ng-model="$ctrl.bizStreetAddressUnit">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="bizCity">
+          City
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="bizCity"
+          name="bizCity"
+          required="required"
+          ng-model="$ctrl.bizCity">
+      </div>
+
+      <div class="col-md-3">
+        <label for="bizState">
+          State
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="bizState"
+          name="bizState"
+          required="required"
+          ng-model="$ctrl.bizState">
+      </div>
+
+      <div class="col-md-3">
+        <label for="bizZip">
+          ZIP code
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="bizZip"
+          name="bizZip"
+          required="required"
+          ng-model="$ctrl.bizZip">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="bizPhone">
+          Phone
+        </label>
+        <input
+          type="text"
+          id="bizPhone"
+          name="bizPhone"
+          ng-model="$ctrl.bizPhone">
+      </div>
+
+      <div class="col-md-6">
+        <label for="bizTin">
+          TIN/EIN
+        </label>
+        <input
+          type="text"
+          id="bizTin"
+          name="bizTin"
+          ng-model="$ctrl.bizTin">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="bizEmail">
+          Email address
+        </label>
+        <input
+          type="text"
+          id="bizEmail"
+          name="bizEmail"
+          ng-model="$ctrl.bizEmail">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="bizUrl">
+          Website
+        </label>
+        <input
+          type="text"
+          id="bizUrl"
+          name="bizUrl"
+          ng-model="$ctrl.bizUrl">
+      </div>
+    </div>
+  </fieldset>
+
+  <hr>
+
+  <div class="ref-btn-area">
+    <button
+      class="btn btn-secondary pull-left"
+      type="button"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : contactForm.$invalid }"
+      type="submit"
+      ng-disabled="contactForm.$invalid">
+      Continue
+    </button>
+  </div>
+</form>

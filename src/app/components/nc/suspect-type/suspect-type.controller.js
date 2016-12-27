@@ -2,8 +2,8 @@ function SuspectTypeController($state, store) {
   store.setProgressBar(0.15);
 
   // Check if form was previously submited, if so set radio to checked
-  if ( store.values.nc.suspectType ) {
-    this.radio = store.values.nc.suspectType;
+  if ( store.values.suspectType ) {
+    this.radio = store.values.suspectType;
   }
 
   this.back = function() {
@@ -13,19 +13,19 @@ function SuspectTypeController($state, store) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'individual':
-        store.values.nc.suspectType = 'individual';
+        store.values.suspectType = 'individual';
         $state.go('nc.indContact');
         break;
       case 'business':
-        store.values.nc.suspectType = 'business';
+        store.values.suspectType = 'business';
         $state.go('XX');
         break;
       case 'exempt':
-        store.values.nc.suspectType = 'exempt';
+        store.values.suspectType = 'exempt';
         $state.go('XX');
         break;
       case 'gov':
-        store.values.nc.suspectType = 'gov';
+        store.values.suspectType = 'gov';
         $state.go('XX');
         break;
     }
