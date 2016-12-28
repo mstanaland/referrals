@@ -38,7 +38,8 @@ function DebugController($state, store) {
     bizUrl: 'www.marylouhair.com',
     violations: [
       {
-        violationType: 'incorrectIncome'
+        violationType: 'incorrectIncome',
+        violation: 'usedCash'
       }
     ],
   };

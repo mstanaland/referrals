@@ -20,7 +20,7 @@ function indViolationTypeController($state, store) {
         break;
       case 'incorrectIncome':
         store.values.violations[store.currentViolation].violationType = 'incorrectIncome';
-        $state.go('XX');
+        $state.go('nc.indViolationsIncome');
         break;
       case 'falseExemptions':
         store.values.violations[store.currentViolation].violationType = 'falseExemptions';
