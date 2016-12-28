@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button
+        type="button"
+        class="btn btn-xs debug-toggle"
+        ng-click="$ctrl.showDev = !$ctrl.showDev">
+        Toggle dev helpers
+      </button>
+    </div>
+  </div>
+  <div ng-if="$ctrl.showDev">
+    <div class="debug-container">
+      <div class="row">
+        <div class="col-md-4">
+          <form
+            name="debugData"
+            novalidate
+            ng-submit="$ctrl.fillData($ctrl.scenario);">
+            Data fill
+            <select ng-model="$ctrl.scenario">
+              <option value="maryLouSudberry">Mary Lou Sudberry</option>
+            </select>
+            <button class="btn btn-primary btn-xs">
+              Populate
+            </button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <form
+            name="debugJump"
+            novalidate
+            ng-submit="$ctrl.jumpTo($ctrl.jumpLocation)">
+            Jump to
+            <select
+              name="jumpTo"
+              ng-model="$ctrl.jumpLocation">
+              <option value="landing">Landing</option>
+              <optgroup label="NC">
+                <option value="nc.indContact">ind-contact</option>
+                <option value="nc.indViolationType">ind-violation-type</option>
+              </optgroup>
+            </select>
+            <button class="btn btn-primary btn-xs">
+              Jump
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

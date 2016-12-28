@@ -1,4 +1,4 @@
-function LandingController($scope, $state, store) {
+function LandingController($state, store) {
 
   // Check if form was previously submited, if so set radio to checked
   if ( store.values.landing ) {
