@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <button
-        type="button"
-        class="btn btn-xs debug-toggle"
+      <a
+        href=""
+        class="debug-toggle"
         ng-click="$ctrl.showDev = !$ctrl.showDev">
         Toggle dev helpers
-      </button>
+      </a>
     </div>
   </div>
-  <div ng-if="$ctrl.showDev">
-    <div class="debug-container">
+</div>
+<div ng-if="$ctrl.showDev">
+  <div class="debug-container">
+    <div class="container">
       <div class="row">
         <div class="col-md-4">
           <form
@@ -22,7 +24,7 @@
               <option value="maryLouSudberry">Mary Lou Sudberry</option>
             </select>
             <button class="btn btn-primary btn-xs">
-              Populate
+              Populate data
             </button>
           </form>
         </div>
@@ -37,12 +39,16 @@
               ng-model="$ctrl.jumpLocation">
               <option value="landing">Landing</option>
               <optgroup label="NC">
+                <option value="nc.prescreen">prescreen</option>
+                <option value="nc.whistleblower">whistleblower</option>
+                <option value="nc.suspectType">suspectType</option>
                 <option value="nc.indContact">ind-contact</option>
+                <option value="nc.indBusiness">ind-business</option>
                 <option value="nc.indViolationType">ind-violation-type</option>
               </optgroup>
             </select>
             <button class="btn btn-primary btn-xs">
-              Jump
+              Jump to page
             </button>
           </form>
         </div>

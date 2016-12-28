@@ -19,13 +19,28 @@ function DebugController($state, store) {
     state: 'TX',
     zip: '76905',
     ssn: null,
-    dob: 60,
+    dob: '60',
     email: null,
     occupation: 'hair dresser',
     maritalStatus: 'married',
     spouseName: 'Pete Sudberry',
     relationship: 'relative',
-    isDangerous: 'no'
+    isDangerous: 'no',
+    hasBiz: 'yes',
+    bizName: 'Mary Lou Hair Styles and More',
+    bizStreetAddress: '318 S 14th St.',
+    bizStreetAddressUnit: 'Ste. B',
+    bizCity: 'Abilene',
+    bizState: 'TX',
+    bizZip: '76905',
+    bizPhone: '915-322-2311',
+    bizEmail: null,
+    bizUrl: 'www.marylouhair.com',
+    violations: [
+      {
+        violationType: 'incorrectIncome'
+      }
+    ],
   };
 
   this.fillData = function(scenario) {

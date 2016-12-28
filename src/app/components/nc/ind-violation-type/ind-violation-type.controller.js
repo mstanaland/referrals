@@ -2,8 +2,10 @@ function indViolationTypeController($state, store) {
   store.setProgressBar(0.3);
 
   // Check if form was previously submited, if so set radio to checked
-  if ( store.values.violationType ) {
-    this.radio = store.values.violationType;
+  if ( store.values.violations ) {
+    this.radio = store.values.violations[store.values.violations.length - 1].violationType;
+  } else {
+    store.values.violations = [];
   }
 
   this.back = function() {
