@@ -1,9 +1,9 @@
 function DebugController($state, store) {
   this.showDev = false;
-  this.scenario = 'maryLouSudberry';
-  this.jumpLocation = 'landing';
+  // this.scenario = 'maryLouSudberry';
+  // this.jumpLocation = 'landing';
 
-  var maryLouSudberry = {
+  var acceptedGoods = {
     nc: {},
     victim: {},
     comms: {},
@@ -39,15 +39,68 @@ function DebugController($state, store) {
     violations: [
       {
         violationType: 'incorrectIncome',
-        violation: 'usedCash'
+        violation: 'acceptedGoods',
+        whatGoods: 'Airplane tickets, massages and free bowling passes',
+        whoProvidedGoods: 'Joe Smith, the CEO of Acme travel',
+        freqProvidedGoods: '4-5 times a year',
+        howFoundOut: 'I saw it happen',
+        otherFacts: null,
+      }
+    ],
+  };
+
+  var noFile = {
+    nc: {},
+    victim: {},
+    comms: {},
+    landing: 'nc',
+    prescreen: 'none',
+    whistleblower: 'no',
+    suspectType: 'individual',
+    firstName: 'Mary Lou',
+    lastName: 'Sudberry',
+    streetAddress: '3426 Ivanhoe Lane',
+    streetAddressUnit: null,
+    city: 'Abilene',
+    state: 'TX',
+    zip: '76905',
+    ssn: null,
+    dob: '60',
+    email: null,
+    occupation: 'hair dresser',
+    maritalStatus: 'married',
+    spouseName: 'Pete Sudberry',
+    relationship: 'relative',
+    isDangerous: 'no',
+    hasBiz: 'yes',
+    bizName: 'Mary Lou Hair Styles and More',
+    bizStreetAddress: '318 S 14th St.',
+    bizStreetAddressUnit: 'Ste. B',
+    bizCity: 'Abilene',
+    bizState: 'TX',
+    bizZip: '76905',
+    bizPhone: '915-322-2311',
+    bizEmail: null,
+    bizUrl: 'www.marylouhair.com',
+    violations: [
+      {
+        violationType: 'noFile',
+        violation: 'noFile',
+        description: 'Mary Lou told me she hasn\'t done her taxes in years and she thinks she gets away with it because she believes the IRS thinks she\'s dead.' ,
+        howFoundOut: 'She told me last Wednesday at the bowling alley',
+        otherFacts: null
       }
     ],
   };
 
   this.fillData = function(scenario) {
     switch(scenario) {
-      case 'maryLouSudberry':
-        store.values = maryLouSudberry;
+      case 'acceptedGoods':
+        store.values = acceptedGoods;
+        break;
+      case 'noFile':
+        store.values = noFile;
+        break;
     }
 
     $state.reload($state.current.name);

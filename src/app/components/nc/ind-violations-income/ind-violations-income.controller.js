@@ -7,25 +7,27 @@ function IndViolationsIncomeController($state, store) {
 
   if ( store.values.violations && store.values.violations[store.currentViolation].violation ) {
     this.radio = store.values.violations[store.currentViolation].violation;
+  } else {
+    store.values.violations = [{}];
   }
 
   this.onSubmit = function() {
     switch(this.radio) {
       case 'usedCash':
         store.values.violations[store.currentViolation].violation = 'usedCash';
-        $state.go('xxx');
+        $state.go('nc.indViolationsIncomeDetails');
         break;
-      case 'AcceptedGoods':
-        store.values.violations[store.currentViolation].violation = 'AcceptedGoods';
-        $state.go('xxx');
+      case 'acceptedGoods':
+        store.values.violations[store.currentViolation].violation = 'acceptedGoods';
+        $state.go('nc.indViolationsIncomeDetails');
         break;
       case 'gambling':
         store.values.violations[store.currentViolation].violation = 'gambling';
-        $state.go('xxx');
+        $state.go('nc.indViolationsIncomeDetails');
         break;
       case 'falseIncome':
         store.values.violations[store.currentViolation].violation = 'falseIncome';
-        $state.go('xxx');
+        $state.go('nc.indViolationsIncomeDetails');
         break;
     }
   };

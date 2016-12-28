@@ -21,7 +21,8 @@
             ng-submit="$ctrl.fillData($ctrl.scenario);">
             Data fill
             <select ng-model="$ctrl.scenario">
-              <option value="maryLouSudberry">Mary Lou Sudberry</option>
+              <option value="noFile">Didn't file a return</option>
+              <option value="acceptedGoods">Accept goods or services</option>
             </select>
             <button class="btn btn-primary btn-xs">
               Populate data
@@ -47,6 +48,7 @@
                 <option value="nc.indViolationType">ind-violation-type</option>
                 <option value="nc.indViolationsNofile">ind-violations-nofile</option>
                 <option value="nc.indViolationsIncome">ind-violations-income</option>
+                <option value="nc.indViolationsIncomeDetails">ind-violations-income-details</option>
               </optgroup>
             </select>
             <button class="btn btn-primary btn-xs">

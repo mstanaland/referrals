@@ -1,0 +1,96 @@
+<div ng-if="$ctrl.violation === 'acceptedGoods'">
+  <div class="ref-alert ref-alert-info">
+    <div class="ref-alert-body">
+      <h3>Accepted goods or services for payment to avoid reporting income</h3>
+      <p>Instead of being paid with money, the person or business accepted goods (such as plane tickets) or services (such as yard work) and did not report the income on their taxes.</p>
+      <p>Not the right violation? <a href="" ng-click="$ctrl.back();">Go back</a></p>
+    </div>
+  </div>
+</div>
+
+<div ng-if="$ctrl.violation === 'noFile'">
+  <div class="ref-alert ref-alert-info">
+    <div class="ref-alert-body">
+      <h3>Did not file a tax return</h3>
+      <p>The person or business did not submit a tax return to the IRS. Everyone is required to complete a tax return every year, even if you did not have any income.</p>
+      <p>Not the right violation? <a href="" ng-click="$ctrl.back();">Go back</a></p>
+    </div>
+  </div>
+</div>
+
+
+<h3>Provide details about the violation</h3>
+
+<hr>
+
+<form name="form" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <div ng-if="$ctrl.violation === 'acceptedGoods'">
+      <label for="whatGoods">What goods or services did the individual accept?</label>
+      <textarea
+        id="whatGoods"
+        name="whatGoods"
+        ng-model="$ctrl.whatGoods">
+      </textarea>
+    </div>
+
+    <div ng-if="$ctrl.violation === 'acceptedGoods'">
+      <label for="whoProvidedGoods">Who provided the goods and/or services?</label>
+      <textarea
+        id="whoProvidedGoods"
+        name="whoProvidedGoods"
+        ng-model="$ctrl.whoProvidedGoods">
+      </textarea>
+    </div>
+
+    <div ng-if="$ctrl.violation === 'acceptedGoods'">
+      <label for="freqProvidedGoods">How often did the exchanged of goods and/or services occur?</label>
+      <textarea
+        id="freqProvidedGoods"
+        name="freqProvidedGoods"
+        ng-model="$ctrl.freqProvidedGoods">
+      </textarea>
+    </div>
+
+    <div ng-if="$ctrl.violation != 'acceptedGoods'">
+      <label for="description">In your own words, briefly describe what happened</label>
+      <textarea
+        id="description"
+        name="description"
+        ng-model="$ctrl.description">
+      </textarea>
+    </div>
+
+    <label for="howFoundOut">How did you find out about the violation?</label>
+    <textarea
+      id="howFoundOut"
+      name="howFoundOut"
+      ng-model="$ctrl.howFoundOut">
+    </textarea>
+
+    <label for="otherFacts">Are there any other pertinent facts about the violation?</label>
+    <textarea
+      id="otherFacts"
+      name="otherFacts"
+      ng-model="$ctrl.otherFacts">
+    </textarea>
+  </fieldset>
+
+  <hr>
+
+  <div class="ref-btn-area">
+    <button
+      type="button"
+      class="btn btn-secondary pull-left"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : form.$invalid }"
+      type="submit"
+      ng-disabled="form.$invalid">
+      Continue
+    </button>
+  </div>
+</form>

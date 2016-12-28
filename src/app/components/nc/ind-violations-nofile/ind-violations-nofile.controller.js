@@ -13,11 +13,11 @@ function IndViolationsNofileController($state, store) {
     switch(this.radio) {
       case 'noFile':
         store.values.violations[store.currentViolation].violation = 'noFile';
-        $state.go('xxx');
+        $state.go('nc.indViolationsIncomeDetails');
         break;
       case 'noPay':
         store.values.violations[store.currentViolation].violation = 'noPay';
-        $state.go('xxx');
+        $state.go('nc.indViolationsIncomeDetails');
         break;
     }
   };
