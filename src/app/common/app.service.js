@@ -5,6 +5,8 @@ function store () {
     comms: {}
   };
 
+  this.currentViolation = 0;
+
   this.setProgressBar = function(value) {
     var width = document.querySelectorAll('.ref-progressbar')[0].clientWidth;
     var newWidth = width * value;

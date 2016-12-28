@@ -3,9 +3,9 @@ function indViolationTypeController($state, store) {
 
   // Check if form was previously submited, if so set radio to checked
   if ( store.values.violations ) {
-    this.radio = store.values.violations[store.values.violations.length - 1].violationType;
+    this.radio = store.values.violations[store.currentViolation].violationType;
   } else {
-    store.values.violations = [];
+    store.values.violations = [{}];
   }
 
   this.back = function() {
@@ -15,31 +15,31 @@ function indViolationTypeController($state, store) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'noFile':
-        store.values.violationType = 'noFile';
-        $state.go('nc.XX');
+        store.values.violations[store.currentViolation].violationType = 'noFile';
+        $state.go('nc.indViolationsNofile');
         break;
       case 'incorrectIncome':
-        store.values.violationType = 'incorrectIncome';
+        store.values.violations[store.currentViolation].violationType = 'incorrectIncome';
         $state.go('XX');
         break;
       case 'falseExemptions':
-        store.values.violationType = 'falseExemptions';
+        store.values.violations[store.currentViolation].violationType = 'falseExemptions';
         $state.go('XX');
         break;
       case 'alteredDocs':
-        store.values.violationType = 'alteredDocs';
+        store.values.violations[store.currentViolation].violationType = 'alteredDocs';
         $state.go('XX');
         break;
       case 'illegalIncome':
-        store.values.violationType = 'illegalIncome';
+        store.values.violations[store.currentViolation].violationType = 'illegalIncome';
         $state.go('XX');
         break;
       case 'terrorist':
-        store.values.violationType = 'terrorist';
+        store.values.violations[store.currentViolation].violationType = 'terrorist';
         $state.go('XX');
         break;
       case 'other':
-        store.values.violationType = 'other';
+        store.values.violations[store.currentViolation].violationType = 'other';
         $state.go('XX');
         break;
     }

@@ -1,0 +1,36 @@
+<h3>Which best describes the violation you’re reporting?</h3>
+
+<hr>
+
+<form name="form" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <ul class="ref-unstyled-list">
+      <li>
+        <input id="noFile" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="noFile">
+        <label for="noFile">Didn't file a tax return</label>
+      </li>
+      <li>
+        <input id="noPay" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="noPay">
+        <label for="noPay">Didn't pay taxes that were owed</label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <hr>
+
+  <div class="ref-btn-area">
+    <button
+      type="button"
+      class="btn btn-secondary pull-left"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : form.$invalid }"
+      type="submit"
+      ng-disabled="form.$invalid">
+      Continue
+    </button>
+  </div>
+</form>
