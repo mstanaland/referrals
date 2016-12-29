@@ -1,0 +1,171 @@
+<h3>Do you want to identify yourself?</h3>
+<p>This information is not required to process your report, but would be helpful if we need to contact you for any additional information.</p>
+<p>We never share your name or details with the person or business you are reporting.</p>
+
+<hr>
+
+<form name="form" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <ul class="ref-unstyled-list">
+      <li>
+        <input id="no" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="no">
+        <label for="no">No, submit anonymously</label>
+      </li>
+      <li>
+        <input id="yes" type="radio" name="radios" ng-required="!radio" ng-model="$ctrl.radio" value="yes">
+        <label for="yes">Yes</label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <fieldset class="ref-fieldset-inputs" ng-if="$ctrl.radio==='yes'">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="firstName">
+          First name
+          <em class="ref-form-required ">Required</em></label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required="required"
+          ng-model="$ctrl.firstName">
+      </div>
+      <div class="col-md-6">
+        <label for="lastName">
+          Last name
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          name="firstName"
+          required="required"
+          ng-model="$ctrl.lastName">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="streetAddress">
+          Street address
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="streetAddress"
+          name="streetAddress"
+          required="required"
+          ng-model="$ctrl.streetAddress">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label for="streetAddressUnit">
+          Apartment/Unit/Other
+        </label>
+        <input
+          type="text"
+          id="streetAddressUnit"
+          name="streetAddressUnit"
+          ng-model="$ctrl.streetAddressUnit">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="city">
+          City
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          required="required"
+          ng-model="$ctrl.city">
+      </div>
+
+      <div class="col-md-3">
+        <label for="state">
+          State
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          required="required"
+          ng-model="$ctrl.state">
+      </div>
+
+      <div class="col-md-3">
+        <label for="zip">
+          ZIP code
+          <em class="ref-form-required ">Required</em>
+        </label>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          required="required"
+          ng-model="$ctrl.zip">
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-12">
+        <label for="email">
+          Email
+        </label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          ng-model="$ctrl.email">
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="phone">
+          Phone
+        </label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          ng-model="$ctrl.phone">
+      </div>
+      <div class="col-md-6">
+        <label for="bestTimeToCall">
+          Best time to call
+        </label>
+        <input
+          type="text"
+          id="bestTimeToCall"
+          name="bestTimeToCall"
+          ng-model="$ctrl.bestTimeToCall">
+      </div>
+    </div>
+  </fieldset>
+
+  <hr>
+
+  <div class="ref-btn-area">
+    <button
+      class="btn btn-secondary pull-left"
+      type="button"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : form.$invalid }"
+      type="submit"
+      ng-disabled="form.$invalid">
+      Continue
+    </button>
+  </div>
+</form>

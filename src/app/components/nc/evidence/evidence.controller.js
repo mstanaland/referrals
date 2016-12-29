@@ -11,16 +11,19 @@ function EvidenceController($state, store) {
   };
 
   this.onSubmit = function() {
+    if (!store.values.violations) {
+      store.values.violations = [{}];
+    }
+
     switch(this.radio) {
       case 'yes':
         store.values.violations[store.currentViolation].evidence = 'yes';
-        // $state.go('evidence');
         break;
       case 'no':
         store.values.violations[store.currentViolation].evidence = 'no';
         break;
     }
-    console.log(store.values);
+    $state.go('nc.selfId');
   };
 }
 

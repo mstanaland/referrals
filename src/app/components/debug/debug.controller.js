@@ -49,6 +49,18 @@ function DebugController($state, store) {
         evidence: 'no'
       }
     ],
+    selfId: 'yes',
+    selfIdContact: {
+      firstName: 'John',
+      lastName: 'Smith',
+      streetAddress: '4821 12th NW',
+      streetAddressUnit: '#331',
+      city: 'Washington',
+      state: 'DC',
+      zip: '22201',
+      phone: '202-991-2555',
+      bestTimeToCall: 'after 4pm'
+    }
   };
 
   var noFile = {
@@ -94,6 +106,18 @@ function DebugController($state, store) {
         evidence: 'no'
       }
     ],
+    selfId: 'yes',
+    selfIdContact: {
+      firstName: 'John',
+      lastName: 'Smith',
+      streetAddress: '4821 12th NW',
+      streetAddressUnit: '#331',
+      city: 'Washington',
+      state: 'DC',
+      zip: '22201',
+      phone: '202-991-2555',
+      bestTimeToCall: 'after 4pm'
+    }
   };
 
   this.fillData = function(scenario) {
