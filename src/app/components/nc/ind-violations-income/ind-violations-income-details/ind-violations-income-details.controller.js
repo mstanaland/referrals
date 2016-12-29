@@ -21,12 +21,17 @@ function IndViolationsIncomeDetailsController($state, store) {
   }
 
   this.onSubmit = function() {
+    if (!store.values.violations) {
+      store.values.violations = [{}];
+    }
     store.values.violations[store.currentViolation].whatGoods = this.whatGoods || null;
     store.values.violations[store.currentViolation].whoProvidedGoods = this.whoProvidedGoods || null;
     store.values.violations[store.currentViolation].freqProvidedGoods = this.freqProvidedGoods || null;
     store.values.violations[store.currentViolation].howFoundOut = this.howFoundOut || null;
     store.values.violations[store.currentViolation].otherFacts = this.otherFacts || null;
     store.values.violations[store.currentViolation].description = this.description || null;
+
+    $state.go('nc.evidence');
   };
 
 

@@ -1,0 +1,56 @@
+<h3>Do you have any evidence of the violation you can upload?</h3>
+<p>If you have digital copies of receipts, tax returns or any other record or document related to the violation you’re reporting, you can upload them now.</p>
+
+<hr>
+
+<form name="form" novalidate ng-submit="$ctrl.onSubmit();">
+  <fieldset class="ref-fieldset-inputs">
+    <ul class="ref-unstyled-list">
+      <li>
+        <input
+          type="radio"
+          id="no"
+          value="no"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="no">No / I only have paper documents</label>
+      </li>
+      <li>
+        <input
+          type="radio"
+          id="yes"
+          value="yes"
+          name="radios"
+          ng-required="!radio"
+          ng-model="$ctrl.radio">
+        <label for="yes">Yes</label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <fieldset class="ref-fieldset-inputs margin-below" ng-if="$ctrl.radio==='yes'">
+    <div class="ref-alert">
+      Upload widget goes here
+    </div>
+  </fieldset>
+
+
+  <hr>
+
+  <div class="ref-btn-area">
+    <button
+      type="button"
+      class="btn btn-secondary pull-left"
+      ng-click="$ctrl.back();">
+      Back
+    </button>
+    <button
+      class="btn btn-primary pull-right"
+      ng-class="{ 'btn-disabled' : form.$invalid }"
+      type="submit"
+      ng-disabled="form.$invalid">
+        Continue
+      </button>
+  </div>
+</form>

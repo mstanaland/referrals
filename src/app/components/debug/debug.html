@@ -49,12 +49,19 @@
                 <option value="nc.indViolationsNofile">ind-violations-nofile</option>
                 <option value="nc.indViolationsIncome">ind-violations-income</option>
                 <option value="nc.indViolationsIncomeDetails">ind-violations-income-details</option>
+                <option value="nc.evidence">evidence</option>
               </optgroup>
             </select>
             <button class="btn btn-primary btn-xs">
               Jump to page
             </button>
           </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <pre class="debug-pre">{{ $ctrl.values | json }}</pre>
         </div>
       </div>
     </div>

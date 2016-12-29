@@ -1,5 +1,6 @@
 function DebugController($state, store) {
   this.showDev = false;
+  this.values = store.values;
   // this.scenario = 'maryLouSudberry';
   // this.jumpLocation = 'landing';
 
@@ -45,6 +46,7 @@ function DebugController($state, store) {
         freqProvidedGoods: '4-5 times a year',
         howFoundOut: 'I saw it happen',
         otherFacts: null,
+        evidence: 'no'
       }
     ],
   };
@@ -88,7 +90,8 @@ function DebugController($state, store) {
         violation: 'noFile',
         description: 'Mary Lou told me she hasn\'t done her taxes in years and she thinks she gets away with it because she believes the IRS thinks she\'s dead.' ,
         howFoundOut: 'She told me last Wednesday at the bowling alley',
-        otherFacts: null
+        otherFacts: null,
+        evidence: 'no'
       }
     ],
   };
@@ -104,6 +107,7 @@ function DebugController($state, store) {
     }
 
     $state.reload($state.current.name);
+    this.values = store.values;
   };
 
   this.jumpTo = function(location) {
