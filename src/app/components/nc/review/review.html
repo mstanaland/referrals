@@ -144,7 +144,7 @@
   <p class="ref-review-label violation-label">Your information</p>
   <p ng-if="$ctrl.values.selfId === 'no'">Submitting anonymously</p>
   <div class="ref-review-block" ng-if="$ctrl.values.selfId === 'yes'">
-    <h4>foo {{ $ctrl.values.selfIdContact.firstName }} {{ $ctrl.values.selfIdContact.lastName }}</h4>
+    <h4>{{ $ctrl.values.selfIdContact.firstName }} {{ $ctrl.values.selfIdContact.lastName }}</h4>
     {{ $ctrl.values.selfIdContact.streetAddress }}, {{ $ctrl.values.selfIdContact.city }}, {{ $ctrl.values.selfIdContact.state }}
   </div>
 </div>
