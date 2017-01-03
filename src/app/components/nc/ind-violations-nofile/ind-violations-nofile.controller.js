@@ -12,11 +12,11 @@ function IndViolationsNofileController($state, store) {
   this.onSubmit = function() {
     switch(this.radio) {
       case 'noFile':
-        store.values.violations[store.currentViolation].violation = 'noFile';
+        store.values.violations[store.currentViolation].violation = 'Did not file a tax return';
         $state.go('nc.indViolationsIncomeDetails');
         break;
       case 'noPay':
-        store.values.violations[store.currentViolation].violation = 'noPay';
+        store.values.violations[store.currentViolation].violation = 'Did not pay taxes that were owed';
         $state.go('nc.indViolationsIncomeDetails');
         break;
     }

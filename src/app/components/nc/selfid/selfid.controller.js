@@ -29,7 +29,7 @@ function SelfIdController($state, store) {
       bestTimeToCall: this.bestTimeToCall
     };
 
-    console.log(store.values);
+    $state.go('nc.review');
   };
 }
 

@@ -1,13 +1,10 @@
 function DebugController($state, store) {
   this.showDev = false;
   this.values = store.values;
-  // this.scenario = 'maryLouSudberry';
-  // this.jumpLocation = 'landing';
+  this.scenario = 'noFile';
+  this.jumpLocation = 'landing';
 
   var acceptedGoods = {
-    nc: {},
-    victim: {},
-    comms: {},
     landing: 'nc',
     prescreen: 'none',
     whistleblower: 'no',
@@ -15,7 +12,7 @@ function DebugController($state, store) {
     firstName: 'Mary Lou',
     lastName: 'Sudberry',
     streetAddress: '3426 Ivanhoe Lane',
-    streetAddressUnit: null,
+    streetAddressUnit: '#4',
     city: 'Abilene',
     state: 'TX',
     zip: '76905',
@@ -40,11 +37,19 @@ function DebugController($state, store) {
     violations: [
       {
         violationType: 'incorrectIncome',
-        violation: 'acceptedGoods',
+        violation: 'Accepted goods or services for payment to avoid reporting income',
         whatGoods: 'Airplane tickets, massages and free bowling passes',
         whoProvidedGoods: 'Joe Smith, the CEO of Acme travel',
         freqProvidedGoods: '4-5 times a year',
         howFoundOut: 'I saw it happen',
+        otherFacts: null,
+        evidence: 'no'
+      },
+      {
+        violationType: 'noFile',
+        violation: 'Did not file a tax return',
+        description: 'Mary Lou told me she hasn\'t done her taxes in years and she thinks she gets away with it because she believes the IRS thinks she\'s dead.' ,
+        howFoundOut: 'She told me last Wednesday at the bowling alley',
         otherFacts: null,
         evidence: 'no'
       }
@@ -64,9 +69,6 @@ function DebugController($state, store) {
   };
 
   var noFile = {
-    nc: {},
-    victim: {},
-    comms: {},
     landing: 'nc',
     prescreen: 'none',
     whistleblower: 'no',
@@ -99,7 +101,7 @@ function DebugController($state, store) {
     violations: [
       {
         violationType: 'noFile',
-        violation: 'noFile',
+        violation: 'Did not file a tax return',
         description: 'Mary Lou told me she hasn\'t done her taxes in years and she thinks she gets away with it because she believes the IRS thinks she\'s dead.' ,
         howFoundOut: 'She told me last Wednesday at the bowling alley',
         otherFacts: null,

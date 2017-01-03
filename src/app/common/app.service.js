@@ -1,9 +1,5 @@
 function store () {
-  this.values = {
-    nc: {},
-    victim: {},
-    comms: {}
-  };
+  this.values = {};
 
   this.currentViolation = 0;
 

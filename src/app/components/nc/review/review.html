@@ -1,0 +1,168 @@
+<h3>Review your report</h3>
+<p>If you suspect the individual you are reporting committed more than one offense, click “Add another violation” below. </p>
+
+<hr>
+
+<div class="ref-review">
+  <p class="ref-review-label">Individual you suspect violated tax law <span ng-if="$ctrl.values.hasBiz === 'yes'">and their business</span></p>
+  <div class="ref-review-block idblock">
+    <h4>{{ $ctrl.values.firstName }} {{ $ctrl.values.lastName }}</h4>
+    {{ $ctrl.address }}, {{ $ctrl.values.city }}, {{ $ctrl.values.state }}
+    <a href="" class="ref-more-link" ng-click="$ctrl.indToggle();">{{ $ctrl.indMoreText }}</a>
+
+    <div class="ref-review-block-more" ng-if="$ctrl.indMore">
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>{{ $ctrl.values.firstName }} {{ $ctrl.values.lastName }}</td>
+          </tr>
+          <tr>
+            <td>Street</td>
+            <td>{{ $ctrl.values.streetAddress}}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.streetAddressUnit">
+            <td>Unit/Other</td>
+            <td>{{ $ctrl.values.streetAddressUnit }}</td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>{{ $ctrl.values.city}}</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>{{ $ctrl.values.state }}</td>
+          </tr>
+          <tr>
+            <td>ZIP code</td>
+            <td>{{ $ctrl.values.zip }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.ssn">
+            <td>SSN</td>
+            <td>{{ $ctrl.values.ssn }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.dob">
+            <td>DoB/age</td>
+            <td>{{ $ctrl.values.dob }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.email">
+            <td>Email</td>
+            <td>{{ $ctrl.values.email }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.occupation">
+            <td>Occupation</td>
+            <td>{{ $ctrl.values.occupation }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.maritalStatus">
+            <td>Marital status</td>
+            <td>{{ $ctrl.values.maritalStatus }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.spouseName">
+            <td>Spouse's name</td>
+            <td>{{ $ctrl.values.spouseName }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.relationship">
+            <td>Relationship</td>
+            <td>{{ $ctrl.values.relationship }}</td>
+          </tr>
+          <tr ng-if="$ctrl.values.isDangerous">
+            <td>Person is dangerous?</td>
+            <td>{{ $ctrl.values.isDangerous }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Business -->
+  <div ng-if="$ctrl.values.hasBiz === 'yes'">
+    <!-- <p class="ref-review-label">Their small business</p> -->
+    <div class="ref-review-block bizblock">
+      <h4>{{ $ctrl.values.bizName }}</h4>
+      {{ $ctrl.bizAddress }}, {{ $ctrl.values.bizCity }}, {{ $ctrl.values.bizState }}
+      <a href="" class="ref-more-link" ng-click="$ctrl.bizToggle();">{{ $ctrl.bizMoreText }}</a>
+
+      <div class="ref-review-block-more" ng-if="$ctrl.bizMore">
+        <table>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>{{ $ctrl.values.bizName }}</td>
+            </tr>
+            <tr>
+              <td>Street</td>
+              <td>{{ $ctrl.values.bizStreetAddress}}</td>
+            </tr>
+            <tr ng-if="$ctrl.values.streetAddressUnit">
+              <td>Unit/Other</td>
+              <td>{{ $ctrl.values.bizStreetAddressUnit }}</td>
+            </tr>
+            <tr>
+              <td>City</td>
+              <td>{{ $ctrl.values.bizCity}}</td>
+            </tr>
+            <tr>
+              <td>State</td>
+              <td>{{ $ctrl.values.bizState }}</td>
+            </tr>
+            <tr>
+              <td>ZIP code</td>
+              <td>{{ $ctrl.values.bizZip }}</td>
+            </tr>
+            <tr ng-if="$ctrl.values.ssn">
+              <td>TIN/EIN</td>
+              <td>{{ $ctrl.values.bizTin }}</td>
+            </tr>
+            <tr ng-if="$ctrl.values.dob">
+              <td>Phone</td>
+              <td>{{ $ctrl.values.bizPhone }}</td>
+            </tr>
+            <tr ng-if="$ctrl.values.email">
+              <td>Email</td>
+              <td>{{ $ctrl.values.bizEmail }}</td>
+            </tr>
+            <tr ng-if="$ctrl.values.occupation">
+              <td>Website</td>
+              <td>{{ $ctrl.values.bizUrl }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> <!--ng-if for biz -->
+
+  <!-- violations -->
+  <p class="ref-review-label violation-label">Suspected violation(s)</p>
+  <div class="ref-review-block violation-block" ng-repeat="violation in $ctrl.values.violations">
+    <h4>{{ violation.violation }}</h4>
+  </div>
+  <div class="ref-add-violation">
+    <a href="">Add another violation</a>
+  </div>
+
+  <!-- Self id -->
+  <p class="ref-review-label violation-label">Your information</p>
+  <p ng-if="$ctrl.values.selfId === 'no'">Submitting anonymously</p>
+  <div class="ref-review-block" ng-if="$ctrl.values.selfId === 'yes'">
+    <h4>foo {{ $ctrl.values.selfIdContact.firstName }} {{ $ctrl.values.selfIdContact.lastName }}</h4>
+    {{ $ctrl.values.selfIdContact.streetAddress }}, {{ $ctrl.values.selfIdContact.city }}, {{ $ctrl.values.selfIdContact.state }}
+  </div>
+</div>
+
+<hr>
+
+<div class="ref-btn-area">
+  <button
+    type="button"
+    class="btn btn-secondary pull-left"
+    ng-click="$ctrl.back();">
+    Back
+  </button>
+  <button
+    class="btn btn-primary pull-right"
+    ng-class="{ 'btn-disabled' : form.$invalid }"
+    type="submit"
+    ng-click="$ctrl.values.onSubmit();">
+    Submit fraud report
+  </button>
+</div>
