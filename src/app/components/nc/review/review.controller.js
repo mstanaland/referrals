@@ -19,6 +19,10 @@ function ReviewController($state, store) {
     $state.go('nc.selfId');
   };
 
+  this.onSubmit = function() {
+    $state.go('nc.done');
+  };
+
 
   if (store.values.streetAddressUnit) {
     this.address = store.values.streetAddress + ' ' + store.values.streetAddressUnit;
