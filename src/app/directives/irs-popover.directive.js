@@ -28,7 +28,8 @@ angular.module('common')
               $(element).popover({
                   placement: 'bottom',
                   title: scope.header,
-                  template: output
+                  template: output,
+                  container: 'body'
               }).on('shown.bs.popover', function () {
                   // Safari mobile fix
                   // see: https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
