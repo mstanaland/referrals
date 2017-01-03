@@ -1,5 +1,9 @@
 function SelfIdController($state, store) {
-  store.setProgressBar(0.5);
+  store.setProgressBar(0.75);
+
+  this.back = function() {
+    $state.go('nc.evidence');
+  };
 
   if (store.values.selfId) {
     this.radio = store.values.selfId;

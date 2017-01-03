@@ -1,5 +1,5 @@
 function ReviewController($state, store) {
-  store.setProgressBar(0.5);
+  store.setProgressBar(0.9);
   this.values = store.values;
   this.indMoreText = 'View details';
   this.bizMoreText = 'View details';
