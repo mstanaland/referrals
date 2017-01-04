@@ -24,8 +24,7 @@ function ReviewController($scope, $state, store) {
   };
 
   this.onSubmit = function() {
-    // $state.go('nc.done');
-    console.log('scope', $scope.$ctrl.contactForm.$valid);
+    $state.go('nc.done');
   };
 
   this.updateData = function() {
