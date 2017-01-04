@@ -1,23 +1,47 @@
 .ref-review-label
   font-size: 14px
   color: $color-gray
-  margin: 1em 0 0.25em 0
+  margin: 2em 0 0.25em 0
 
-  &.violation-label
-    margin-top: 2em
 
 .ref-review-block
   margin-bottom: 0.5em
   padding: 1em
   background: $light-blue
 
-  &.violation-block
-    background: $light-yellow
 
-  h4
+
+
+  // form
+  //   margin-top: 1em
+  //   padding-top: 1em
+  //   border-top: solid 1px darken($light-blue, 10%)
+
+.ref-review-block-title
+  @include clearfix
+
+  .ref-review-block-title-head
+    float: left
     margin: 0
     font-size: 1em
-    font-weight: bold
+    font-weight: normal
+    line-height: 1.3
+    // white-space: nowrap
+    max-width: 80%
+
+    @media screen and (max-width: $screen-sm)
+      float: none
+      max-width: 100%
+      white-space: normal
+
+  .ref-review-block-title-more
+    // display: inline-block
+    // margin-left: 1em
+    // font-size: 0.85em
+    float: right
+    line-height: 1.3
+    @media screen and (max-width: $screen-sm)
+      float: none
 
 .ref-review-block-more
   margin-top: 1.5em
@@ -31,3 +55,5 @@
       padding-right: 1em
       color: $color-gray
       width: 30%
+      @media screen and (max-width: $screen-sm)
+        width: 45%

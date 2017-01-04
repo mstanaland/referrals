@@ -1,17 +1,21 @@
-function ReviewController($state, store) {
+function ReviewController($scope, $state, store) {
   store.setProgressBar(0.9);
   this.values = store.values;
-  this.indMoreText = 'View details';
-  this.bizMoreText = 'View details';
+  this.indMore = false;
+  this.bizMore = false;
+
+
+
+  this.$postLink = function() {
+    // console.log('scope', $scope.$ctrl.contactForm.$valid);
+  };
 
   this.indToggle = function() {
     this.indMore = !this.indMore;
-    this.indMoreText = this.indMore ? 'Hide details' : 'View details';
   };
 
   this.bizToggle = function() {
     this.bizMore = !this.bizMore;
-    this.bizMoreText = this.bizMore ? 'Hide details' : 'View details';
   };
 
   this.back = function() {
@@ -20,7 +24,16 @@ function ReviewController($state, store) {
   };
 
   this.onSubmit = function() {
-    $state.go('nc.done');
+    // $state.go('nc.done');
+    console.log('scope', $scope.$ctrl.contactForm.$valid);
+  };
+
+  this.updateData = function() {
+    store.values = this.values;
+    this.contactForm.$setPristine();
+    this.bizContactForm.$setPristine();
+    this.bizMore = false;
+    this.indMore = false;
   };
 
 

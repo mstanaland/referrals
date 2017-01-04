@@ -13,20 +13,20 @@ function IndViolationsIncomeController($state, store) {
 
   this.onSubmit = function() {
     switch(this.radio) {
-      case 'usedCash':
-        store.values.violations[store.currentViolation].violation = 'Used cash to avoid reporting income';
+      case 'Used cash to avoid reporting income':
+        store.values.violations[store.currentViolation].violation = this.radio;
         $state.go('nc.indViolationsIncomeDetails');
         break;
-      case 'acceptedGoods':
-        store.values.violations[store.currentViolation].violation = 'Accepted goods or services for payment to avoid reporting income';
+      case 'Accepted goods or services for payment to avoid reporting income':
+        store.values.violations[store.currentViolation].violation = this.radio;
         $state.go('nc.indViolationsIncomeDetails');
         break;
-      case 'gambling':
-        store.values.violations[store.currentViolation].violation = 'Did not report gambling income';
+      case 'Did not report gambling income':
+        store.values.violations[store.currentViolation].violation = this.radio;
         $state.go('nc.indViolationsIncomeDetails');
         break;
-      case 'falseIncome':
-        store.values.violations[store.currentViolation].violation = 'Reported incorrect/false income';
+      case 'Reported incorrect/false income':
+        store.values.violations[store.currentViolation].violation = this.radio;
         $state.go('nc.indViolationsIncomeDetails');
         break;
     }

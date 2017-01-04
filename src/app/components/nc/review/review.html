@@ -4,148 +4,491 @@
 <hr>
 
 <div class="ref-review">
-  <p class="ref-review-label">Individual you suspect violated tax law <span ng-if="$ctrl.values.hasBiz === 'yes'">and their business</span></p>
-  <div class="ref-review-block idblock">
-    <h4>{{ $ctrl.values.firstName }} {{ $ctrl.values.lastName }}</h4>
-    {{ $ctrl.address }}, {{ $ctrl.values.city }}, {{ $ctrl.values.state }}
-    <a href="" class="ref-more-link" ng-click="$ctrl.indToggle();">{{ $ctrl.indMoreText }}</a>
+  <p class="ref-review-label">Individual you suspect violated tax law</p>
+  <div class="ref-review-block">
+    <form name="$ctrl.contactForm" novalidate ng-submit="$ctrl.updateData();">
+      <div class="ref-review-block-title">
+        <h5 class="ref-review-block-title-head">{{ $ctrl.values.firstName }} {{ $ctrl.values.lastName }}</h5>
+        <a
+          href=""
+          class="ref-review-block-title-more"
+          ng-click="$ctrl.indToggle();"
+          ng-if="!$ctrl.indMore">
+          View details
+        </a>
+      </div>
 
-    <div class="ref-review-block-more" ng-if="$ctrl.indMore">
-      <table>
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>{{ $ctrl.values.firstName }} {{ $ctrl.values.lastName }}</td>
-          </tr>
-          <tr>
-            <td>Street</td>
-            <td>{{ $ctrl.values.streetAddress}}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.streetAddressUnit">
-            <td>Unit/Other</td>
-            <td>{{ $ctrl.values.streetAddressUnit }}</td>
-          </tr>
-          <tr>
-            <td>City</td>
-            <td>{{ $ctrl.values.city}}</td>
-          </tr>
-          <tr>
-            <td>State</td>
-            <td>{{ $ctrl.values.state }}</td>
-          </tr>
-          <tr>
-            <td>ZIP code</td>
-            <td>{{ $ctrl.values.zip }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.ssn">
-            <td>SSN</td>
-            <td>{{ $ctrl.values.ssn }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.dob">
-            <td>DoB/age</td>
-            <td>{{ $ctrl.values.dob }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.email">
-            <td>Email</td>
-            <td>{{ $ctrl.values.email }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.occupation">
-            <td>Occupation</td>
-            <td>{{ $ctrl.values.occupation }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.maritalStatus">
-            <td>Marital status</td>
-            <td>{{ $ctrl.values.maritalStatus }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.spouseName">
-            <td>Spouse's name</td>
-            <td>{{ $ctrl.values.spouseName }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.relationship">
-            <td>Relationship</td>
-            <td>{{ $ctrl.values.relationship }}</td>
-          </tr>
-          <tr ng-if="$ctrl.values.isDangerous">
-            <td>Person is dangerous?</td>
-            <td>{{ $ctrl.values.isDangerous }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="ref-review-block-more" ng-show="$ctrl.indMore">
+        <fieldset class="ref-fieldset-inputs margin-below">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="firstName">
+                First name
+                <em class="ref-form-required ">Required</em></label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required="required"
+                ng-model="$ctrl.values.firstName">
+            </div>
+            <div class="col-md-6">
+              <label for="lastName">
+                Last name
+                <em class="ref-form-required ">Required</em>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="firstName"
+                required="required"
+                ng-model="$ctrl.values.lastName">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label for="streetAddress">
+                Street address
+                <em class="ref-form-required ">Required</em>
+              </label>
+              <input
+                type="text"
+                id="streetAddress"
+                name="streetAddress"
+                required="required"
+                ng-model="$ctrl.values.streetAddress">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label for="streetAddressUnit">
+                Apartment/Unit/Other
+              </label>
+              <input
+                type="text"
+                id="streetAddressUnit"
+                name="streetAddressUnit"
+                ng-model="$ctrl.values.streetAddressUnit">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5">
+              <label for="city">
+                City
+                <em class="ref-form-required ">Required</em>
+              </label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required="required"
+                ng-model="$ctrl.values.city">
+            </div>
+
+            <div class="col-md-3">
+              <label for="state">
+                State
+                <em class="ref-form-required ">Required</em>
+              </label>
+              <input
+                type="text"
+                id="state"
+                name="state"
+                required="required"
+                ng-model="$ctrl.values.state">
+            </div>
+
+            <div class="col-md-4">
+              <label for="zip">
+                ZIP code
+                <em class="ref-form-required ">Required</em>
+              </label>
+              <input
+                type="text"
+                id="zip"
+                name="zip"
+                required="required"
+                ng-model="$ctrl.values.zip">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="ref-fieldset-inputs">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="ssn">
+                Social Security Number
+              </label>
+              <input
+                type="text"
+                id="ssn"
+                name="ssn"
+                ng-model="$ctrl.values.ssn">
+            </div>
+
+            <div class="col-md-6">
+              <label for="dob">
+                Date of birth or approximate age
+              </label>
+              <input
+                type="text"
+                id="dob"
+                name="dob"
+                ng-model="$ctrl.values.dob">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label for="email">
+                Email address
+              </label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                ng-model="$ctrl.values.email">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label for="occupation">
+                Occupation
+              </label>
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                ng-model="$ctrl.values.occupation">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label for="maritalStatus">Marital status</label>
+              <select
+                name="maritalStatus"
+                id="maritalStatus"
+                ng-model="$ctrl.values.maritalStatus">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+              </select>
+            </div>
+
+            <div class="col-md-8">
+              <label for="spouseName">
+                Spouse's name
+              </label>
+              <input
+                type="text"
+                id="spouseName"
+                name="spouseName"
+                ng-model="$ctrl.values.spouseName">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <label for="relationship">How do you know this person?</label>
+              <select
+                name="relationship"
+                id="relationship"
+                ng-model="$ctrl.values.relationship">
+                <option value="friend">Friend</option>
+                <option value="relative">Relative</option>
+                <option value="coworker">Coworker</option>
+                <option value="neighbor">Neighbor</option>
+                <option value="ex">Ex or former spouse</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <p>Do you consider this person to be dangerous?</p>
+
+                  <input
+                    type="radio"
+                    id="dangerYes"
+                    value="yes"
+                    name="radios"
+                    ng-model="$ctrl.radio">
+                  <label for="dangerYes">
+                    Yes
+                  </label>
+
+                  <input
+                    type="radio"
+                    id="dangerNo"
+                    value="no"
+                    name="radios"
+                    ng-model="$ctrl.radio">
+                  <label for="dangerNo">
+                    No / Don't know
+                  </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <hr>
+
+        <div class="ref-btn-area">
+          <button
+            ng-if="$ctrl.contactForm.$pristine"
+            class="btn btn-primary pull-right"
+            ng-class="{ 'btn-disabled' : $ctrl.contactForm.$invalid }"
+            type="button"
+            ng-click="$ctrl.indToggle();">
+            Close
+          </button>
+          <button
+            ng-if="$ctrl.contactForm.$dirty"
+            class="btn btn-primary pull-right"
+            ng-class="{ 'btn-disabled' : $ctrl.contactForm.$invalid }"
+            type="submit"
+            ng-disabled="$ctrl.contactForm.$invalid">
+            Save changes
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 
   <!-- Business -->
   <div ng-if="$ctrl.values.hasBiz === 'yes'">
-    <!-- <p class="ref-review-label">Their small business</p> -->
-    <div class="ref-review-block bizblock">
-      <h4>{{ $ctrl.values.bizName }}</h4>
-      {{ $ctrl.bizAddress }}, {{ $ctrl.values.bizCity }}, {{ $ctrl.values.bizState }}
-      <a href="" class="ref-more-link" ng-click="$ctrl.bizToggle();">{{ $ctrl.bizMoreText }}</a>
+    <p class="ref-review-label">Suspect's small business</p>
+    <div class="ref-review-block">
+      <form name="$ctrl.bizContactForm" novalidate ng-submit="$ctrl.updateData();">
+        <div class="ref-review-block-title">
+          <h5 class="ref-review-block-title-head">{{ $ctrl.values.bizName }}</h5>
+          <a
+            href=""
+            class="ref-review-block-title-more"
+            ng-click="$ctrl.bizToggle();"
+            ng-if="!$ctrl.bizMore">
+            View details
+          </a>
+        </div>
 
-      <div class="ref-review-block-more" ng-if="$ctrl.bizMore">
-        <table>
-          <tbody>
-            <tr>
-              <td>Name</td>
-              <td>{{ $ctrl.values.bizName }}</td>
-            </tr>
-            <tr>
-              <td>Street</td>
-              <td>{{ $ctrl.values.bizStreetAddress}}</td>
-            </tr>
-            <tr ng-if="$ctrl.values.streetAddressUnit">
-              <td>Unit/Other</td>
-              <td>{{ $ctrl.values.bizStreetAddressUnit }}</td>
-            </tr>
-            <tr>
-              <td>City</td>
-              <td>{{ $ctrl.values.bizCity}}</td>
-            </tr>
-            <tr>
-              <td>State</td>
-              <td>{{ $ctrl.values.bizState }}</td>
-            </tr>
-            <tr>
-              <td>ZIP code</td>
-              <td>{{ $ctrl.values.bizZip }}</td>
-            </tr>
-            <tr ng-if="$ctrl.values.ssn">
-              <td>TIN/EIN</td>
-              <td>{{ $ctrl.values.bizTin }}</td>
-            </tr>
-            <tr ng-if="$ctrl.values.dob">
-              <td>Phone</td>
-              <td>{{ $ctrl.values.bizPhone }}</td>
-            </tr>
-            <tr ng-if="$ctrl.values.email">
-              <td>Email</td>
-              <td>{{ $ctrl.values.bizEmail }}</td>
-            </tr>
-            <tr ng-if="$ctrl.values.occupation">
-              <td>Website</td>
-              <td>{{ $ctrl.values.bizUrl }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="ref-review-block-more" ng-show="$ctrl.bizMore">
+          <fieldset class="ref-fieldset-inputs">
+            <div class="row">
+              <div class="col-md-12">
+                <label for="bizName">
+                  Business name
+                  <em class="ref-form-required ">Required</em></label>
+                <input
+                  type="text"
+                  id="bizName"
+                  name="bizName"
+                  required="required"
+                  ng-model="$ctrl.values.bizName">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label for="bizStreetAddress">
+                  Street address
+                  <em class="ref-form-required ">Required</em>
+                </label>
+                <input
+                  type="text"
+                  id="bizStreetAddress"
+                  name="bizStreetAddress"
+                  required="required"
+                  ng-model="$ctrl.values.bizStreetAddress">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <label for="bizStreetAddressUnit">
+                  Suite/Unit/Other
+                </label>
+                <input
+                  type="text"
+                  id="bizStreetAddressUnit"
+                  name="bizStreetAddressUnit"
+                  ng-model="$ctrl.values.bizStreetAddressUnit">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5">
+                <label for="bizCity">
+                  City
+                  <em class="ref-form-required ">Required</em>
+                </label>
+                <input
+                  type="text"
+                  id="bizCity"
+                  name="bizCity"
+                  required="required"
+                  ng-model="$ctrl.values.bizCity">
+              </div>
+
+              <div class="col-md-3">
+                <label for="bizState">
+                  State
+                  <em class="ref-form-required ">Required</em>
+                </label>
+                <input
+                  type="text"
+                  id="bizState"
+                  name="bizState"
+                  required="required"
+                  ng-model="$ctrl.values.bizState">
+              </div>
+
+              <div class="col-md-4">
+                <label for="bizZip">
+                  ZIP code
+                  <em class="ref-form-required ">Required</em>
+                </label>
+                <input
+                  type="text"
+                  id="bizZip"
+                  name="bizZip"
+                  required="required"
+                  ng-model="$ctrl.values.bizZip">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label for="bizPhone">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  id="bizPhone"
+                  name="bizPhone"
+                  ng-model="$ctrl.values.bizPhone">
+              </div>
+
+              <div class="col-md-6">
+                <label for="bizTin">
+                  TIN/EIN
+                </label>
+                <input
+                  type="text"
+                  id="bizTin"
+                  name="bizTin"
+                  ng-model="$ctrl.values.bizTin">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label for="bizEmail">
+                  Email address
+                </label>
+                <input
+                  type="text"
+                  id="bizEmail"
+                  name="bizEmail"
+                  ng-model="$ctrl.values.bizEmail">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label for="bizUrl">
+                  Website
+                </label>
+                <input
+                  type="text"
+                  id="bizUrl"
+                  name="bizUrl"
+                  ng-model="$ctrl.values.bizUrl">
+              </div>
+            </div>
+          </fieldset>
+
+          <hr>
+
+          <div class="ref-btn-area">
+            <button
+              ng-if="$ctrl.bizContactForm.$pristine"
+              class="btn btn-primary pull-right"
+              ng-class="{ 'btn-disabled' : $ctrl.bizContactForm.$invalid }"
+              type="button"
+              ng-click="$ctrl.bizToggle();">
+              Close
+            </button>
+            <button
+              ng-if="$ctrl.bizContactForm.$dirty"
+              class="btn btn-primary pull-right"
+              ng-class="{ 'btn-disabled' : $ctrl.bizContactForm.$invalid }"
+              type="submit"
+              ng-disabled="$ctrl.bizContactForm.$invalid">
+              Save changes
+            </button>
+
+
+          </div>
+        </div>
+      </form>
     </div>
   </div> <!--ng-if for biz -->
 
   <!-- violations -->
-  <p class="ref-review-label violation-label">Suspected violation(s)</p>
-  <div class="ref-review-block violation-block" ng-repeat="violation in $ctrl.values.violations">
-    <h4>{{ violation.violation }}</h4>
+  <p class="ref-review-label">Suspected violation(s)</p>
+  <div class="ref-review-block" ng-repeat="violation in $ctrl.values.violations">
+    <form name="$ctrl.bizContactForm{{$index}}" novalidate ng-submit="$ctrl.updateData();">
+      <div class="ref-review-block-title">
+        <h5 class="ref-review-block-title-head">{{ violation.violation }}</h5>
+        <a
+          href=""
+          class="ref-review-block-title-more"
+          ng-click="$ctrl.bizToggle();"
+          ng-if="!$ctrl.bizMore">
+          View details
+        </a>
+      </div>
+
+      <div class="ref-review-block-more" ng-show="$ctrl.violationMore">
+        more
+      </div>
+    </form>
+
+
   </div>
   <div class="ref-add-violation">
-    <a href="">Add another violation</a>
+    <a href="" class="pull-right">Add another violation</a>
   </div>
 
+
+
   <!-- Self id -->
-  <p class="ref-review-label violation-label">Your information</p>
-  <p ng-if="$ctrl.values.selfId === 'no'">Submitting anonymously</p>
-  <div class="ref-review-block" ng-if="$ctrl.values.selfId === 'yes'">
-    <h4>{{ $ctrl.values.selfIdContact.firstName }} {{ $ctrl.values.selfIdContact.lastName }}</h4>
-    {{ $ctrl.values.selfIdContact.streetAddress }}, {{ $ctrl.values.selfIdContact.city }}, {{ $ctrl.values.selfIdContact.state }}
+  <p class="ref-review-label">Your information</p>
+  <div class="ref-review-block">
+    <form name="$ctrl.selfIdForm" novalidate ng-submit="$ctrl.updateData();">
+      <div class="ref-review-block-title">
+        <h5
+          class="ref-review-block-title-head"
+          ng-if="$ctrl.values.selfId === 'no'">
+          Submitting anonymously
+        </h5>
+        <h5
+          class="ref-review-block-title-head"
+          ng-if="$ctrl.values.selfId === 'yes'">
+          {{ $ctrl.values.selfIdContact.firstName }} {{ $ctrl.values.selfIdContact.lastName }}
+        </h5>
+        <a
+          href=""
+          class="ref-review-block-title-more"
+          ng-click="$ctrl.indToggle();">
+          View details
+        </a>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -160,9 +503,10 @@
   </button>
   <button
     class="btn btn-primary pull-right"
-    ng-class="{ 'btn-disabled' : form.$invalid }"
     type="submit"
-    ng-click="$ctrl.onSubmit();">
-    Submit fraud report
+    ng-click="$ctrl.onSubmit();"
+    ng-class="{ 'btn-disabled' : $ctrl.contactForm.$invalid ||  $ctrl.bizContactForm.$invalid }"
+    ng-disabled="$ctrl.contactForm.$invalid ||  $ctrl.bizContactForm.$invalid">
+    Submit report
   </button>
 </div>
